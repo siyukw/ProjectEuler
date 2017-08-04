@@ -1,4 +1,15 @@
 import math
+
+def is_prime(x):
+    if x > 1:
+        n = x // 2
+        for i in range(2, n + 1):
+            if x % i == 0:
+                return False
+        return True
+    else:
+        return False
+
 '''
 #Problem 1
 sum = 0
@@ -42,7 +53,7 @@ while check:
     else:
         i = i + 1
 [Finished in 0.082s]
-'''
+
 # Problem 4
 a = 999
 b = 999
@@ -62,4 +73,51 @@ for i in range(100, 999):
                     hold = result
 
 print a, b
-print hold
+print hold[Finished in 0.408s]
+
+
+# Problem 5
+primeAll = 1
+
+for i in range(2, 21):
+    if is_prime(i):
+        check1 = True
+        a = 1
+        while check1:
+            num = math.pow(i, a)
+            if num >= 20:
+                check1 = False
+            else:
+                a = a + 1
+        primeAll = primeAll * math.pow(i, a - 1)
+print primeAll[Finished in 0.072s]
+
+
+# Problem6
+sum = 0
+for i in range(1, 101):
+    sum = sum + i
+sum = sum * sum
+square = 0
+for i in range(1, 101):
+    square = square + i * i
+print square - sum
+'''
+
+# Problem7
+count = 0
+check = True
+num = 2
+while check:
+    if is_prime(num):
+        count = count + 1
+        if count == 10001:
+            check = False
+        else:
+            num = num + 1
+    else:
+        num = num + 1
+
+
+
+print num
