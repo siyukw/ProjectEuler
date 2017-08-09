@@ -144,7 +144,8 @@ for i in range(1, 500):
 
 # Problem10
 sum = 0
-for i in range(1, 2000001):
+for i in range(2, 2000001):
+    print i
     if is_prime(i):
         sum = sum + i
-print sum 
+print sum
