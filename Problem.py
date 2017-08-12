@@ -1,14 +1,15 @@
 import math
 
-def is_prime(x):
-    if x > 1:
-        n = x // 2
-        for i in range(2, n + 1):
-            if x % i == 0:
-                return False
-        return True
-    else:
+def is_prime(n):
+    if n > 2 and n % 2 == 0:
         return False
+    else:
+        for i in range(3, int(math.sqrt(n)) + 1, 2):
+            if n % i == 0:
+                return False
+
+    return True;
+
 
 '''
 #Problem 1
@@ -143,9 +144,10 @@ for i in range(1, 500):
 '''
 
 # Problem10
-sum = 0
-for i in range(2, 2000001):
-    print i
+
+
+sum = 2
+for i in range(3, 2000000):
     if is_prime(i):
         sum = sum + i
 print sum
